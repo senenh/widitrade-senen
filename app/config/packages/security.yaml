@@ -10,7 +10,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            pattern: ^/api
+            pattern: ^/
             provider: backend_users
             access_token:
                 token_handler: App\Security\AccessTokenHandler

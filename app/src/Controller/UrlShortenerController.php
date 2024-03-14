@@ -26,7 +26,7 @@ class UrlShortenerController extends AbstractController
         }
 
         $shortenedUrl = $urlShortener->shortenUrl($urlData->getUrl());
-        
+
         return new JsonResponse(['url' => $shortenedUrl]);
     }
 
