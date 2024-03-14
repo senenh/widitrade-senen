@@ -1,0 +1,23 @@
+security:
+
+    providers:
+        backend_users:
+            memory:
+                users:
+                    john_admin: { password: '$2y$13$jxGxcIuqDju', roles: [ 'ROLE_ADMIN' ] }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/api
+            provider: backend_users
+            access_token:
+                token_handler: App\Security\AccessTokenHandler
+                token_extractors: App\Security\CustomTokenExtractor
+        
+        
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/, roles: [IS_AUTHENTICATED_FULLY]  }
