@@ -24,11 +24,8 @@ Realizar una petición POST al endpoint `/api/v1/url-shortener` , incluyendo el 
 
 ```shell
 
-curl --location --request POST 'http://localhost:8099/api/v1/url-shortener' \
---header 'Authorization: Bearer ([]' \
---header 'Content-Type: application/json' \
---data-raw '{
-"url": "https://www.google.es/search?sca_esv=3c0cd88929cc7700&q=gatos+en+el+espacio&tbm=isch&source=lnms&sa=X&ved=2ahUKEwivkLnlseyEAxWRUaQEHU9sAgYQ0pQJegQICRAB&biw=1728&bih=959&dpr=2"
+curl --location --request POST 'http://localhost:8099/api/v1/url-shortener' --header 'Authorization: Bearer []' --header 'Content-Type: application/json' --data-raw '{
+    "url": "https://www.google.es/search?sca_esv=3c0cd88929cc7700&q=gatos+en+el+espacio&tbm=isch&source=lnms&sa=X&ved=2ahUKEwivkLnlseyEAxWRUaQEHU9sAgYQ0pQJegQICRAB&biw=1728&bih=959&dpr=2"
 }'
 
 ```
@@ -38,7 +35,7 @@ Ejemplo de respuesta
  HTTP CODE 200
 ```json
 {
-    "url": "http://tinyurl.com/y2z3x4"
+    "url": "http://tinyurl.com/bdem8t84"
 }
 ```
 
