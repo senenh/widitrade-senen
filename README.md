@@ -1,4 +1,4 @@
-# Pureba técnica Widitrade - Acortador de URLs
+# Prueba técnica Widitrade - Acortador de URLs
 
 ## Descripción
 
@@ -50,7 +50,7 @@ Para ejecutar los tests, ejecutar el siguiente comando:
 
 ## Consideraciones
 
-Desde la versión 6.2 de Symfony se puede usar Access Token Authentication implementado en el componente Security https://symfony.com/doc/6.2/security/access_token.html, pero sólo acepta un string según lo definido en el rfc6750 https://datatracker.ietf.org/doc/html/rfc6750#section-2.1, por lo que he tenido que crear un custom token extractor que acepte los paréntesis, llaves y corchetes como token.
+Desde la versión 6.2 de Symfony se puede usar Access Token Authentication implementado en el componente Security https://symfony.com/doc/6.2/security/access_token.html, pero sólo acepta un string según lo definido en el rfc6750 https://datatracker.ietf.org/doc/html/rfc6750#section-2.1, por lo que he tenido que crear un custom token extractor que acepte los paréntesis, llaves y corchetes como token. Simplemente he copiado el token extractor que utiliza por defecto y he modificado la expresión regular que utiliza para que acepte los caracteres necesarios. https://github.com/symfony/security-http/blob/f3a70a937128f47366821a9f4b5dbfaa0ba9c862/AccessToken/HeaderAccessTokenExtractor.php#L23
 
 
 ## Roadmap (Plan de Mejoras Futuras)

@@ -4,12 +4,6 @@ namespace App\Service;
 
 class ValidParentheses
 {
-    /** @var string[] */
-    private array $openChars = ['(', '{', '['];
-
-    /** @var string[] */
-    private array $closeChars = [')', '}', ']'];
-
     /** @var array<string, string> */
     private array $openToClose = [
         '(' => ')',
@@ -27,13 +21,13 @@ class ValidParentheses
         $stack = new \SplStack();
 
         foreach ($array as $item) {
-            if (in_array($item, $this->closeChars, true)) {
+            if (in_array($item, $this->openToClose, true)) {
                 if ($stack->isEmpty() || $this->openToClose[$stack->top()] !== $item) {
                     return false;
                 }
 
                 $stack->pop();
-            } elseif (in_array($item, $this->openChars, true)) {
+            } elseif (array_key_exists($item, $this->openToClose)) {
                 $stack->push($item);
             }
         }
